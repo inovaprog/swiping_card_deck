@@ -23,4 +23,4 @@ jobs:
     
     # Run tests for flutter project
     - name: Flutter Test
-      run: flutter test test/
+      run: flutter test --coverage
