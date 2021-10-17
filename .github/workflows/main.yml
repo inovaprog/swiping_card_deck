@@ -4,27 +4,26 @@ name: Flutter CI
 on:
   pull_request:
     branches:
-    - main
+      - main
 
 jobs:
   build:
     # This job will run on ubuntu virtual machine
     runs-on: ubuntu-latest
     steps:
-    
-    # Setup the flutter environment.
-    - name: Install Flutter
-      uses: subosito/flutter-action@v1.4.0
-      with:
-        channel: 'stable' 
+      # Setup the flutter environment.
+      - name: Install Flutter
+        uses: subosito/flutter-action@v1.4.0
+        with:
+          flutter-version: "2.0.1"
 
-    - name: Restore packages
-      run: flutter pub get
+      - name: Restore packages
+        run: flutter pub get
 
-    # Statically analyze the Dart code for any errors.
-    - name: Flutter Analyze
-      run: flutter analyze .
-    
-    # Run tests for flutter project
-    - name: Flutter Test
-      run: flutter test --coverage
+      # Statically analyze the Dart code for any errors.
+      - name: Flutter Analyze
+        run: flutter analyze .
+
+      # Run tests for flutter project
+      - name: Flutter Test
+        run: flutter test --coverage
