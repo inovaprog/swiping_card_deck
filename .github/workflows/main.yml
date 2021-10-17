@@ -17,6 +17,9 @@ jobs:
       with:
         channel: 'stable' 
 
+    - name: Restore packages
+      run: flutter pub get
+
     # Statically analyze the Dart code for any errors.
     - name: Flutter Analyze
       run: flutter analyze .
