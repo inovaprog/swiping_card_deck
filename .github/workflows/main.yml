@@ -17,6 +17,9 @@ jobs:
         with:
           flutter-version: "2.0.1"
 
+      - name: Mostrar diretório
+        run: pwd
+
       - name: Restore packages
         run: flutter pub get
 
