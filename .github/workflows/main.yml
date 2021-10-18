@@ -12,13 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Init actions
-      - name: Init Actions
+      - name: Start Workflow
         uses: actions/checkout@v2
-
-      - name: Install Java
-        uses: actions/setup-java@v1
-        with:
-          java-version: "12.x"
 
       # Setup the flutter environment.
       - name: Install Flutter
@@ -26,6 +21,7 @@ jobs:
         with:
           channel: "stable"
 
+      # Restore packages
       - name: Restore packages
         run: flutter pub get
 
